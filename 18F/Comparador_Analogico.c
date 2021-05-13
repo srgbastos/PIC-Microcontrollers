@@ -1,21 +1,18 @@
+/*
+Descrição: Exemplo de uso do Comparador Analógico.
+Dispositivo: PIC18F4550, 4MHz
+Compilador: mikroC
+Simulador: SimulIDE
+*/
+
 void main() {
    ADCON1 = 0x0F; // Pinos de IO como digitais
-   TRISA = 0xCF;
-   CMCON=0x02;             // 'Two Common Reference Comparators with Outputs' Mode
-   TRISD=0x00;
-   
-   while(1)
-   {
-   PORTD.RD0=1;
-   delay_ms(500);
-   PORTD.RD0=0;
-   delay_ms(500);
-   
-    PORTD.F2 = CMCON.C2OUT; // Assigning output of comparator 2 to Rd2
-    PORTD.F1 = CMCON.C1OUT; // Assigning output of comparator 2 to RD1
-    Delay_ms(100);
-   
-   
-   
+   TRISA = 0xCF; // Configuração de PORTA
+   TRISD=0x00; // Configuração de PORTD
+   CMCON = 0x02; // Two Independent Comparators
+
+   while(1){
+      PORTD.RD2 = CMCON.C2OUT; // Conecta C2OUT ao pino RD2
+      PORTD.RD1 = CMCON.C1OUT; // Conecta C2OUT ao pino RD1
    }
 }
