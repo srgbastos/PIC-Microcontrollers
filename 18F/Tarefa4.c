@@ -1,11 +1,5 @@
-/* TAREFA1
-Descrição: Exemplo de uso do Comparador Analógico com interrupção.
-Dispositivo: PIC18F4550, 4MHz
-Compilador: mikroC
-Simulador: SimulIDE
-*/
+// TAREFA1
 
-/*
 void interrupt(){
    if(CMIF_bit){ // Verifica interrupção de comparadores
       PIR2.CMIF = 0;
@@ -28,7 +22,7 @@ void main() {
       PORTD.RD1 = CMCON.C1OUT; // Conecta C2OUT ao pino RD1
    }
 }
-*/
+
 
 // TAREFA2
 
@@ -37,7 +31,7 @@ Descrição: Exemplo de uso da EEPROM interna. Ler pag. 294 do manual MikroC.
 Dispositivo: PIC18F4550, 4MHz
 Compilador: mikroC - Biblioteca Eeprom
 Simulador: SimulIDE
-*/
+
 
 void main(){
    ADCON1 = 0x0F; // Configura todos os pinos como I/O digital
@@ -53,3 +47,4 @@ void main(){
    }
 }
 
+*/
